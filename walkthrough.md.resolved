@@ -1,0 +1,47 @@
+# Customer Segmentation Project Walkthrough
+
+## Overview
+We have successfully completed the end-to-end customer segmentation project. The pipeline loads transaction data, processes it into RFM features, applies K-Means clustering, and generates actionable marketing recommendations.
+
+## Project Structure
+- [main.py](file:///C:/Users/Gireesh/.gemini/antigravity/scratch/customer_segmentation/main.py): Orchestrates the entire pipeline.
+- [data_loader.py](file:///C:/Users/Gireesh/.gemini/antigravity/scratch/customer_segmentation/data_loader.py): Loads the dataset.
+- [preprocessing.py](file:///C:/Users/Gireesh/.gemini/antigravity/scratch/customer_segmentation/preprocessing.py): Cleans data and creates RFM features.
+- [eda.py](file:///C:/Users/Gireesh/.gemini/antigravity/scratch/customer_segmentation/eda.py): Generates exploratory visualizations.
+- [clustering.py](file:///C:/Users/Gireesh/.gemini/antigravity/scratch/customer_segmentation/clustering.py): Implements K-Means, Elbow Method, and Silhouette Score.
+- [visualization.py](file:///C:/Users/Gireesh/.gemini/antigravity/scratch/customer_segmentation/visualization.py): Visualizes clusters using PCA and pairplots.
+- [profiling.py](file:///C:/Users/Gireesh/.gemini/antigravity/scratch/customer_segmentation/profiling.py): Profiles clusters and generates recommendations.
+- [report_generator.py](file:///C:/Users/Gireesh/.gemini/antigravity/scratch/customer_segmentation/report_generator.py): Creates the final markdown report.
+
+## Key Results
+
+### 1. Optimal Clusters
+The Elbow Method and Silhouette Score suggested that **3 clusters** provide a good segmentation.
+
+````carousel
+![Elbow Method](/C:/Users/Gireesh/.gemini/antigravity/scratch/customer_segmentation/eda_plots/elbow_method.png)
+<!-- slide -->
+![Silhouette Score](/C:/Users/Gireesh/.gemini/antigravity/scratch/customer_segmentation/eda_plots/silhouette_score.png)
+````
+
+### 2. Cluster Visualization
+PCA visualization shows distinct groups of customers.
+![PCA Clusters](/C:/Users/Gireesh/.gemini/antigravity/scratch/customer_segmentation/eda_plots/pca_clusters.png)
+
+### 3. Cluster Profiles & Recommendations
+We identified 3 main segments (labels are illustrative based on typical RFM patterns):
+
+| Cluster | Recency (Days) | Frequency | Monetary ($) | Strategy |
+| :--- | :--- | :--- | :--- | :--- |
+| **0** | Moderate | Moderate | Moderate | Upsell, Membership |
+| **1** | Low (Recent) | High | High | **Reward, Exclusive Access** |
+| **2** | High (Old) | Low | Low | Re-engage, Discounts |
+
+*Note: Exact values and labels depend on the specific run and data distribution.*
+
+### 4. Final Report
+A detailed report has been generated at:
+`processed_data/Customer_Segmentation_Report.md`
+
+## Conclusion
+The project successfully segments customers into actionable groups. The automated pipeline allows for easy re-running with new data.
